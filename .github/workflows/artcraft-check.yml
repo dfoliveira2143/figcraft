@@ -48,7 +48,7 @@ jobs:
         print(tomllib.load(open(\"rust-toolchain.toml\", \"rb\"))[\"toolchain\"][\"channel\"])')\nfi\nrustup toolchain install
         \"$channel\" --profile minimal --component clippy --component rustfmt --target wasm32-unknown-unknown\nrustup default
         \"$channel\"\n"
-    - uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283
+    - uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91
       with:
         tool: cargo-nextest@0.9.150
     - name: Official project quality gate
