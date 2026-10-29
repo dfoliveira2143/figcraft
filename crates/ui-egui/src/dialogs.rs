@@ -40,7 +40,7 @@ pub mod variables_panel;
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 /// Where a report goes.
-const ISSUES: &str = "https://github.com/storytold/figcraft/issues";
+const ISSUES: &str = "https://github.com/dfoliveira2143/figcraft/issues";
 
 /// What the desktop app says when its window couldn't open with `error` (no frame was drawn: the
 /// language is the one [`i18n::set`] picked from the preferences). `backend_set`: `WGPU_BACKEND`
@@ -145,14 +145,16 @@ fn about_body(ui: &mut egui::Ui, t: &Tokens) {
     });
     ui.add_space(12.0);
     ui.label(tr(
-        "Interface design and prototyping. A free, open-source, clean-room design tool written from scratch in Rust, part of the ArtCraft Crafting Apps.",
+        "Interface design and prototyping. A free, open-source, clean-room design tool written from scratch in Rust, part of the Creative Workshop Crafting Apps.",
     ));
     ui.add_space(8.0);
-    ui.hyperlink_to("getartcraft.com/apps/figcraft", "https://getartcraft.com/apps/figcraft");
-    ui.hyperlink_to(tr("Join us on Discord"), "https://discord.gg/artcraft");
+    ui.hyperlink_to("github.com/dfoliveira2143/figcraft", "https://github.com/dfoliveira2143/figcraft");
+    ui.hyperlink_to(tr("Project support"), "https://github.com/dfoliveira2143/figcraft/issues");
     ui.add_space(8.0);
     ui.label(
-        RichText::new(tr("Dual-licensed MIT OR Apache-2.0. Made by the ArtCraft team and community.")).color(t.text_secondary).font(regular(11.0)),
+        RichText::new(tr("Dual-licensed MIT OR Apache-2.0. Independent edition; based on the original project by the ArtCraft team."))
+            .color(t.text_secondary)
+            .font(regular(11.0)),
     );
 }
 
