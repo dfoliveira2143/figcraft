@@ -39,7 +39,7 @@ jobs:
         path: craft-fonts
         persist-credentials: false
     - name: Pinned translation setup
-      uses: storytold/craft-common-actions/actions/checkout-craft-i18n@fa5ef18780cf5e7d5d3b8de068de56cffc83cac5
+      uses: storytold/craft-common-actions/actions/checkout-craft-i18n@44a7db40b1a3e99eed02c88f89f38cdd6cfffe81
     - name: Linux dependencies (no persistent cache)
       env:
         PACKAGES: libxkbcommon-dev libwayland-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libgtk-3-dev
@@ -50,7 +50,7 @@ jobs:
         print(tomllib.load(open(\"rust-toolchain.toml\", \"rb\"))[\"toolchain\"][\"channel\"])')\nfi\nrustup toolchain install
         \"$channel\" --profile minimal --component clippy --component rustfmt --target wasm32-unknown-unknown\nrustup default
         \"$channel\"\n"
-    - uses: taiki-e/install-action@5488ac5a951645ce95062214902ac4b6bc1a1037
+    - uses: taiki-e/install-action@68a389c788b2cd04016ce8c80ee23b80d2ab3d68
       with:
         tool: cargo-nextest@0.9.150
     - name: Official project quality gate
